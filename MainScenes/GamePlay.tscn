@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/backgroundColor.png" type="Texture" id=2]
+[ext_resource path="res://Textures/starBig.png" type="Texture" id=3]
+[ext_resource path="res://Meteor/Meteor.tscn" type="PackedScene" id=4]
+
+[node name="GamePlay" type="Node2D"]
+position = Vector2( -2.11893, -3.17841 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 3.00226, 3.99004 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background"]
+position = Vector2( 72.7329, 0.886675 )
+amount = 50
+lifetime = 10.0
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 80, 1 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.6
+angle = 52.2
+angle_random = 1.0
+scale_amount = 0.1
+scale_amount_random = 0.24
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 228.233, 410.181 )
+
+[node name="Meteor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 345.069, 51.0934 )
